@@ -18,6 +18,7 @@ type Enum struct {
 	Name     string    `xml:"name,attr"`
 	Comment  string    `xml:"comment,attr"`
 	File  string    `xml:"file,attr"`
+	ClientFile  string    `xml:"clientFile,attr"`
 	Defs  []Def    `xml:"def"`
 }
 
@@ -44,10 +45,17 @@ func main() {
 
 	for _,e := range result.Enums {
 	
-		if !output(e, tplFile) {
-			return
+		if e.File != "" {
+			if !output(e, tplFile, e.File) {
+				return
+			}
 		}
-
+		
+		if e.ClientFile != "" {
+			if !output(e, tplFile, e.ClientFile) {
+				return
+			}
+		}
 	}
 	
 	fmt.Println("OK")
@@ -85,9 +93,9 @@ func genlist(n string) []string {
 	return ret
 }
 
-func output(e Enum, src string) bool {
+func output(e Enum, src string, des string) bool {
 
-	file, err := os.Create(e.File)
+	file, err := os.Create(des)
 	if err != nil {
 		fmt.Println(err)
 		return false
