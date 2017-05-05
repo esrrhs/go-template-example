@@ -5,6 +5,7 @@
         
 		<def name="CLIENT_EVENT_REGISTER" value="0" comment="注册 【apptoken、userId、deviceType、deviceId、version、osVersion】"/>
 		<def name="CLIENT_EVENT_JOIN" value="1" comment=" 加入游戏 【roomId,tableId,seatId,userId, deviceType,】-- 客户端请求时只需要roomId，其他的参数由网关分配桌号成功后填充,  斗地主最后增加一个light参数代表是否明牌"/>
+		<def name="CLIENT_EVENT_PREPARE" value="2" comment=" 准备"/>
 		
 		
     </enum>
@@ -20,6 +21,7 @@
     <enum name="BackendEventType" comment="内部消息定义" file="BackendEventType.java">
 	
 		<def name="BACKEND_EVENT_GATE_TO_GS_KICK" value="0" comment="网关踢人"/>
+		<def name="BACKEND_EVENT_GS_TO_GATE_BROADCAST" value="1" comment="网关广播"/>
 		
     </enum>
 </result>

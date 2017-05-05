@@ -1,11 +1,16 @@
+package com.netease.game.protobuf;
 
--- Created by genevent.
-
+/**
+ * Created by genevent.
+ */
 // 内部消息定义
-local BackendEventType = {
+public class BackendEventType
+{
  
-	BACKEND_EVENT_GATE_TO_GS_KICK = 0, --网关踢人
+	// 网关踢人
+	public final static int BACKEND_EVENT_GATE_TO_GS_KICK = 0;
+ 
+	// 网关广播
+	public final static int BACKEND_EVENT_GS_TO_GATE_BROADCAST = 1;
 
-}
-
-return BackendEventType
+};

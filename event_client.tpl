@@ -1,7 +1,7 @@
 
 -- Created by genevent.
 
-// {{.Comment}}
+--- {{.Comment}}
 local {{.Name}} = {
 {{range .Defs}} 
 	{{.Name}} = {{.Value}}, --{{.Comment}}

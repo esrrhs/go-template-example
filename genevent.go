@@ -31,13 +31,7 @@ var result = Result{}
 
 func main() {
 
-	if len(os.Args) < 3 {
-		fmt.Println("usage:SrcFileName templateFileName")
-		return
-	}
-
-	srcFile := os.Args[1]
-	tplFile := os.Args[2]
+	srcFile := "event.xml"
 
 	if !parse(srcFile) {
 		return
@@ -46,13 +40,13 @@ func main() {
 	for _,e := range result.Enums {
 	
 		if e.File != "" {
-			if !output(e, tplFile, e.File) {
+			if !output(e, "event_server.tpl", e.File) {
 				return
 			}
 		}
 		
 		if e.ClientFile != "" {
-			if !output(e, tplFile, e.ClientFile) {
+			if !output(e, "event_client.tpl", e.ClientFile) {
 				return
 			}
 		}

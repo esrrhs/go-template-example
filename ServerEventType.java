@@ -1,13 +1,16 @@
+package com.netease.game.protobuf;
 
--- Created by genevent.
-
+/**
+ * Created by genevent.
+ */
 // 服务器消息定义
-local ServerEventType = {
+public class ServerEventType
+{
  
-	SERVER_EVENT_TIME = 0, --游戏开始倒计时 【时间，秒】
+	// 游戏开始倒计时 【时间，秒】
+	public final static int SERVER_EVENT_TIME = 0;
  
-	SERVER_EVENT_ANTE = 1, --下底注 【amount】
+	// 下底注 【amount】
+	public final static int SERVER_EVENT_ANTE = 1;
 
-}
-
-return ServerEventType
+};
