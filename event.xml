@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<result>
+
+    <enum name="ClientEventType" comment="客户端消息定义" file="ClientEventType.java">
+        
+		<def name="CLIENT_EVENT_REGISTER" value="0" comment="注册 【apptoken、userId、deviceType、deviceId、version、osVersion】"/>
+		<def name="CLIENT_EVENT_JOIN" value="1" comment=" 加入游戏 【roomId,tableId,seatId,userId, deviceType,】-- 客户端请求时只需要roomId，其他的参数由网关分配桌号成功后填充,  斗地主最后增加一个light参数代表是否明牌"/>
+		
+		
+    </enum>
+    
+    <enum name="ServerEventType" comment="服务器消息定义" file="ServerEventType.java">
+	
+		<def name="SERVER_EVENT_TIME" value="0" comment="游戏开始倒计时 【时间，秒】"/>
+		<def name="SERVER_EVENT_ANTE" value="1" comment="下底注 【amount】"/>
+		
+		
+    </enum>
+    
+</result>
