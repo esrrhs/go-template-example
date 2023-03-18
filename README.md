@@ -1,2 +1,2 @@
-# genevent
-enum gen tool 
+# go-template-example
+use golang template generate file
